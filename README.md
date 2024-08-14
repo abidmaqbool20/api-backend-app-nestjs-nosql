@@ -26,6 +26,20 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## You will get
+In this repository you will get:
+- JWT Authuntication (passport-jwt)
+- Exception Handeling
+- Logger Implementation
+- Helper Class Setup
+- API Throttling
+- Form Validations
+- String Encryption Decryption
+- Dynamodb Service Implementation
+- Crud Operations on User Module
+- Node Cache
+- API Documenation (Swagger)
+
 ## Installation
 
 ```bash
