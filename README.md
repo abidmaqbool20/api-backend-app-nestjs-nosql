@@ -79,7 +79,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## Stay in touch
 
 - Author - [Abid Maqbool](abidmaqbool20@gmail.com)
-- Website - [https://abidmaqbool.com](https://nestjs.com/) 
+- Website - [https://abidmaqbool.com](https://abidmaqbool.com) 
 
 ## License
 
