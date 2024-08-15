@@ -18,7 +18,7 @@ export class GeneralHelper {
       return await bcrypt.hash(content, 10);
     }
     return content;
-  }
+  } 
 
   static async unprotectedRoutes(): Promise<string[]> {
     return [

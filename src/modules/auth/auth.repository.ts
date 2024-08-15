@@ -11,6 +11,7 @@ import { User } from '@/modules/users/entities/user.entity';
 import { DatabaseService } from '@/db/db.service.interface';
 import { DatabaseServiceFactory } from '@/db/db-service.factory';  
 import { TokenService } from '@/modules/auth/token.service';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class AuthRepository implements OnModuleInit {
@@ -30,10 +31,9 @@ export class AuthRepository implements OnModuleInit {
   }
 
   async validateUser(username: string, password: string): Promise<any> {
-    const user = await this.usersService.findByUsername(username); 
-    return user;
-    let loginPassword = await GeneralHelper.encrypt(password, 'bcrypt');  
-    if (user && user.password === loginPassword) {  
+    const user = await this.usersService.findByUsername(username);     
+    
+    if (user && await bcrypt.compare(password, user.password.S)) {
       const { password, ...result } = user;
       return result;
     }

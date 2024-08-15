@@ -63,9 +63,10 @@ export class UsersService implements OnModuleInit {
   async findByUsername(username: string) {  
     let cacheKey = this.cacheKeysService.getCacheKeyByMethodName('findByUsername',username);
     if (!this.cacheService.has(cacheKey)) { 
-      let result = this.repository.findByUsername(username);
+      let result = await this.repository.findByUsername(username); 
       this.cacheService.set(cacheKey,result,36000); 
     }
+    
     return  this.cacheService.get(cacheKey);  
   }
 
